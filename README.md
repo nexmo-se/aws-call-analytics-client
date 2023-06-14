@@ -1,10 +1,10 @@
-# # Amazon Transcribe - Transcribe Medical - Sample client - 2 participants
+# # Amazon Transcribe / Transcribe Medical - Sample client - 2 participants
 
 Use this sample application to connect to an Amazon Transcribe or Amazon Transcribe Medical connector middleware for real time transcription of pairs of participants in each call.
 
 ## About this sample application
 
-This sample client application makes use of Vonage Voice API to establish voice calls and set up WebSockets connections to stream audio to the Transcribe Medical connector middleware then get back transcipts in real time.
+This sample client application makes use of Vonage Voice API to establish voice calls and set up WebSockets connections to stream audio to the Transcribe / Transcribe Medical connector middleware then get back transcipts in real time.
 
 The connector middleware posts back in real time transcripts, via webhook calls back to this Vonage Voice API sample client application.
 
@@ -16,7 +16,7 @@ Once this application will be running, you test as follows:</br>
 
 ## Set up the reference connection server - Public hostname and port
 
-First set up a Transcribe Medical connector server from https://github.com/nexmo-se/aws-medical-cnx-srv.
+First set up a Transcribe / Transcribe Medical connector server from https://github.com/nexmo-se/aws-call-analytics-connector.
 
 Default local (not public!) of the connector server `port` is: 6000.
 
@@ -24,7 +24,7 @@ If you plan to test using `Local deployment` with ngrok for both the connector a
 
 For the next steps, you will need:
 - The Transcribe Medical connector server's public hostname and if necessary public port,</br>
-e.g. `xxxxxxxx.ngrok.io`, `xxxxxxxx.herokuapp.com`, `myserver.mycompany.com:30000`  (as **`TRANSCRIBE_COMPREHEND_MEDICAL_CNX_SRV`**, no `port` is necessary with ngrok or heroku as public hostname)
+e.g. `xxxxxxxx.ngrok.io`, `xxxxxxxx.herokuapp.com`, `myserver.mycompany.com:30000`  (as **`TRANSCRIBE_COMPREHEND_CNX_SRV`**, no `port` is necessary with ngrok or heroku as public hostname)
 
 ## Client application public hostname and port
 
@@ -58,7 +58,7 @@ For the next steps, you will need:</br>
 - The **`phone number linked`** to your application (your first phone will **call that number**),</br>
 - Your [Vonage API key](https://dashboard.nexmo.com/settings) (as **`API_KEY`**)</br>
 - Your [Vonage API secret](https://dashboard.nexmo.com/settings), not signature secret, (as **`API_SECRET`**)</br>
-- The Transcribe & Comprehend connector server public hostname and port (as **`TRANSCRIBE_COMPREHEND_MEDICAL_REF_CNX`**)</br>
+- The Transcribe & Comprehend connector server public hostname and port (as **`TRANSCRIBE_COMPREHEND_CNX_SRV`**)</br>
 - If you did not yet add funds since you created your account, the [Phone number](https://dashboard.nexmo.com/edit-profile) under your profile (do not confuse with the **`phone number linked`** to your application) must be used as **`CALLEE_NUMBER`** (i.e. the 2nd phone that gets called),</br>
 otherwise you may enter any desired callee phone number as **`CALLEE_NUMBER`**.</br>
 That callee number must be in E.164 format, for example:</br>
@@ -72,7 +72,7 @@ You may select one of the following 2 types of deployments.
 
 ### Local deployment
 
-To run your own instance locally you'll need an up-to-date version of Node.js (we tested with version 14.3.0).
+To run your own instance locally you'll need an up-to-date version of Node.js (we tested with version 16.15).
 
 Copy the `.env.example` file over to a new file called `.env`:
 ```bash
@@ -83,7 +83,7 @@ Edit `.env` file, and set the 5 parameter values:</br>
 API_KEY=</br>
 API_SECRET=</br>
 APP_ID=</br>
-TRANSCRIBE_COMPREHEND_MEDICAL_CNX_SRV=</br>
+TRANSCRIBE_COMPREHEND_CNX_SRV=</br>
 CALLEE_NUMBER=</br>
 
 Install dependencies once:
@@ -93,7 +93,7 @@ npm install
 
 Launch the application:
 ```bash
-node aws-medical-sample-client
+node aws-call-analytics-client
 ```
 
 ### Command Line Heroku deployment
@@ -122,7 +122,7 @@ add the following `Config Vars` and set them with their respective values:</br>
 API_KEY</br>
 API_SECRET</br>
 APP_ID</br>
-TRANSCRIBE_COMPREHEND_MEDICAL_CNX_SRV</br>
+TRANSCRIBE_COMPREHEND_CNX_SRV</br>
 CALLEE_NUMBER</br>
 
 ```bash

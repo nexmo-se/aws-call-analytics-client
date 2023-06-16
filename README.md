@@ -23,7 +23,7 @@ Default local (not public!) of the connector server `port` is: 6000.
 If you plan to test using `Local deployment` with ngrok for both the connector application and this sample application, you may set up [multiple ngrok tunnels](https://ngrok.com/docs#multiple-tunnels).
 
 For the next steps, you will need:
-- The Transcribe Medical connector server's public hostname and if necessary public port,</br>
+- The Transcribe connector server's public hostname and if necessary public port,</br>
 e.g. `xxxxxxxx.ngrok.io`, `xxxxxxxx.herokuapp.com`, `myserver.mycompany.com:30000`  (as **`TRANSCRIBE_COMPREHEND_CNX_SRV`**, no `port` is necessary with ngrok or heroku as public hostname)
 
 ## Client application public hostname and port
@@ -85,6 +85,7 @@ API_SECRET=</br>
 APP_ID=</br>
 TRANSCRIBE_COMPREHEND_CNX_SRV=</br>
 CALLEE_NUMBER=</br>
+SERVICE_NUMBER=</br>
 
 Install dependencies once:
 ```bash
@@ -124,6 +125,7 @@ API_SECRET</br>
 APP_ID</br>
 TRANSCRIBE_COMPREHEND_CNX_SRV</br>
 CALLEE_NUMBER</br>
+SERVICE_NUMBER</br>
 
 ```bash
 git push heroku master

@@ -17,7 +17,9 @@ const privateKey = require('fs').readFileSync('private.key');
 
 const Vonage = require('@vonage/server-sdk');
 
-const regionUrl = "api-us-3.vonage.com";
+const regionUrl = "api-us.vonage.com";
+// const regionUrl = "api-us-3.vonage.com";
+// const regionUrl = "api-us-4.vonage.com";
 
 const options = {
   debug: true,
@@ -44,7 +46,7 @@ const port = process.env.PORT || 8000;
 
 const transcribeComprehendServer = process.env.TRANSCRIBE_COMPREHEND_CNX_SRV;
 
-const samplingRate = 16000; // try other values, must match back end setting
+const samplingRate = 16000; // must match middleware setting
 
 //----------
 

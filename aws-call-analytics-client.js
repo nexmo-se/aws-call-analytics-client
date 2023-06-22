@@ -17,8 +17,8 @@ const privateKey = require('fs').readFileSync('private.key');
 
 const Vonage = require('@vonage/server-sdk');
 
-const regionUrl = "api-us.vonage.com";
-// const regionUrl = "api-us-3.vonage.com";
+// const regionUrl = "api-us.vonage.com";
+const regionUrl = "api-us-3.vonage.com";
 // const regionUrl = "api-us-4.vonage.com";
 
 const options = {
